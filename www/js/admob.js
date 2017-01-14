@@ -132,25 +132,8 @@ function errorFunction(error)
 
    function checkFirstUse()
     {
-//        var currentVersion = 6;
-//        var p = window.localStorage.getItem("currentVersion");
-//        if (p == null) //App downloaded first time
-//        {
-////Finnish
-//            navigator.notification.alert('To see the phone menu, please swipe up/down from the bottom/top of the screen.', initApp, 'Thank you for downloading', 'OK');
-//            window.localStorage.setItem("currentVersion", currentVersion);
-//        }
-//        else if(p < currentVersion) //if app upgraded
-//        {
-////Finnish
-//            navigator.notification.alert('To see the phone menu, please swipe up/down from the bottom/top of the screen.', initApp, 'Thank you for updating', 'OK');
-//            window.localStorage.setItem("currentVersion", currentVersion);            
-//        }
-//        else
-//        {
             askRating();
             initApp();
-//        }
     }
 
 function askRating()
