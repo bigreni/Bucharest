@@ -10,21 +10,19 @@
     if (/(android)/i.test(navigator.userAgent)) {
         admobid = { // for Android
             banner: 'ca-app-pub-1683858134373419/4648497083',
-            interstitial: 'ca-app-pub-1683858134373419/6183774681'
-            //banner: 'ca-app-pub-3886850395157773/3411786244'
-            //interstitial: 'ca-app-pub-9249695405712287/3301233156'
+            interstitial: 'ca-app-pub-9249695405712287/2972783555'
         };
-    }
+    } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
+    admobid = {
+      banner: 'ca-app-pub-1683858134373419/7601963485', // or DFP format "/6253334/dfp_example_ad"
+      interstitial: 'ca-app-pub-9249695405712287/2795951551'
+    };
+  }
 
     function initApp() {
         if (!AdMob) { alert('admob plugin not ready'); return; }
         initAd();
         loadInterstitial();
-        // display the banner at startup
-        //if (Math.round(Math.random()) == 1)
-        //{ loadInterstitial(); }
-        //else
-        //{ createSelectedBanner(); }
     }
 
     function initAd() {
@@ -81,8 +79,9 @@ function errorFunction(error)
 
    function checkFirstUse()
     {
-            askRating();
+//            document.getElementById('screen').style.display = 'none';
             initApp();
+            askRating();
     }
 
 function askRating()
